@@ -27,10 +27,9 @@ public class MemberRepository {
     }
 
     public void printBuyInfo(int price){
-    // Silver 등급 회원 홍길동는 10000원 상품을 9800원에 구매합니다.
         for (int i = 0; i < memberList.size(); i++) {
             Member m = memberList.get(i);
-            System.out.println(m.getGrade() + " 등급 회원 " + m.getName() + "은(는) 10000원 상품을 " + (10000 * (1 - m.calculateInterest())) + "원에 구매합니다.");
+            System.out.println(m.getGrade() + " 등급 회원 " + m.getName() + "은(는) " + price + "원 상품을 " + (int)(price - (price * m.calculateInterest()/m.getPoint())) + "원에 구매합니다.");
         }
     }
 }
