@@ -1,5 +1,6 @@
 package member.controller;
 
+import member.model.exception.OverMemberException;
 import member.model.vo.Member;
 
 import java.util.List;
@@ -9,7 +10,7 @@ public class MemberRepository {
 
     public MemberRepository() {}
 
-    public void insertMemter(Member m) {
+    public void insertMember(Member m) throws Exception {
 
     }
 
