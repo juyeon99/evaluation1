@@ -3,15 +3,20 @@ package member.controller;
 import member.model.exception.OverMemberException;
 import member.model.vo.Member;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MemberRepository {
-    private List<Member> memberList;
+    private List<Member> memberList = new ArrayList<>();
 
     public MemberRepository() {}
 
     public void insertMember(Member m) throws Exception {
-        memberList.add(m);
+        if (memberList.size() >= 10){
+            throw new OverMemberException("Member List is full");
+        } else{
+            memberList.add(m);
+        }
     }
 
     public void printData(){
